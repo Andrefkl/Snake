@@ -1,6 +1,6 @@
 ﻿namespace Snake
 {
-    partial class Form1
+    partial class SnakeGameBoard
     {
         /// <summary>
         ///  Required designer variable.
@@ -43,9 +43,10 @@
             // 
             // ButtonStartGame
             // 
-            this.ButtonStartGame.Location = new System.Drawing.Point(495, 197);
+            this.ButtonStartGame.Location = new System.Drawing.Point(433, 148);
+            this.ButtonStartGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonStartGame.Name = "ButtonStartGame";
-            this.ButtonStartGame.Size = new System.Drawing.Size(94, 29);
+            this.ButtonStartGame.Size = new System.Drawing.Size(82, 22);
             this.ButtonStartGame.TabIndex = 0;
             this.ButtonStartGame.Text = "Start Game";
             this.ButtonStartGame.UseVisualStyleBackColor = true;
@@ -54,7 +55,8 @@
             // SnakeHead
             // 
             this.SnakeHead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.SnakeHead.Location = new System.Drawing.Point(465, 349);
+            this.SnakeHead.Location = new System.Drawing.Point(407, 262);
+            this.SnakeHead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SnakeHead.Name = "SnakeHead";
             this.SnakeHead.Size = new System.Drawing.Size(50, 50);
             this.SnakeHead.TabIndex = 1;
@@ -63,31 +65,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(906, 28);
+            this.label1.Location = new System.Drawing.Point(793, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 20);
+            this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Score:";
             // 
             // LabelScore
             // 
             this.LabelScore.AutoSize = true;
-            this.LabelScore.Location = new System.Drawing.Point(961, 28);
+            this.LabelScore.Location = new System.Drawing.Point(841, 21);
             this.LabelScore.Name = "LabelScore";
-            this.LabelScore.Size = new System.Drawing.Size(17, 20);
+            this.LabelScore.Size = new System.Drawing.Size(13, 15);
             this.LabelScore.TabIndex = 3;
             this.LabelScore.Text = "0";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.ClientSize = new System.Drawing.Size(1034, 565);
             this.Controls.Add(this.LabelScore);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SnakeHead);
             this.Controls.Add(this.ButtonStartGame);
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
