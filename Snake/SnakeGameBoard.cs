@@ -3,9 +3,11 @@ namespace Snake
     public partial class SnakeGameBoard : Form
     {
         int SnakeSpeed = 200; // Invert
-        int FoodSize = 30;
+        int FoodSize = 50;
         int Score = 0;
         int SnakePieceSize = 50;
+        int BoardWidth = 1200;
+        int BoardHeight = 800;
 
         Keys Direction = Keys.Up;
         PictureBox Food = new PictureBox();
@@ -19,6 +21,8 @@ namespace Snake
             TimerMoveSnake.Interval = SnakeSpeed;
             SnakePieces.Add(SnakeHead);
             SnakeHead.Size = new Size(SnakePieceSize, SnakePieceSize);
+            this.Width = BoardWidth;
+            this.Height = BoardHeight;
         }
 
         private void ButtonStartGame_Click(object sender, EventArgs e)
@@ -42,8 +46,8 @@ namespace Snake
 
             // Check if the snake just hit itself or the wall
             if (SnakePieces.Any(snakePiece => snakePiece.Name != "SnakeHead" && snakePiece.Bounds.IntersectsWith(SnakeHead.Bounds))
-                || SnakePieces.Any(snakePiece => snakePiece.Location.X > this.Width - 50 || snakePiece.Location.X < 0
-                                   || snakePiece.Location.Y > this.Height - 50 || snakePiece.Location.Y < 0))
+                || SnakeHead.Location.X > this.Width - 50 || SnakeHead.Location.X < 0
+                                   || SnakeHead.Location.Y > this.Height - 50 || SnakeHead.Location.Y < 0)
             {
                 EndGame();
                 return;
@@ -77,7 +81,7 @@ namespace Snake
         {
             PictureBox snakePiece = new PictureBox();
             snakePiece.Size = new Size(SnakePieceSize, SnakePieceSize);
-            snakePiece.BackColor = Color.DarkGreen;
+            snakePiece.BackColor = Color.Green;
 
             // Adds a new piece of the snake.
             if (Direction == Keys.Down)
